@@ -28,7 +28,7 @@ jobs:
         uses: actions/upload-artifact@v4
         with:
           name: dist-artifacts
-          path: dist/*
+          path: dist/**
 
   release:
     needs: build
@@ -49,4 +49,4 @@ jobs:
         with:
           tag_name: ${{ github.ref_name }}
           name: Release ${{ github.ref_name }}
-          files: release_artifacts/*
+          files: release_artifacts/**
